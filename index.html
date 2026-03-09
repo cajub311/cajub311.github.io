@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charles G Web Design | Twin Cities, MN</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50:'#edfffe', 100:'#c0fffc', 200:'#81fef9', 300:'#3afbf3', 400:'#0de5df', 500:'#06b6d4', 600:'#0891b2', 700:'#0e7490', 800:'#155e75', 900:'#164e63' },
+            dark: { 800:'#1a1a2e', 900:'#0f0f1a', 950:'#080812' }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background: #0f0f1a; color: #e2e8f0; }
+    .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .gradient-text { background: linear-gradient(135deg, #06b6d4, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(6,182,212,0.15); }
+    .btn-primary { background: linear-gradient(135deg, #06b6d4, #3b82f6); transition: all 0.3s ease; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(6,182,212,0.3); }
+  </style>
+</head>
+<body class="font-sans antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 w-full z-50 bg-dark-900/90 backdrop-blur border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" class="text-xl font-bold gradient-text">CG Web Design</a>
+      <div class="hidden md:flex gap-8 text-sm text-gray-400">
+        <a href="#services" class="hover:text-brand-400 transition">Services</a>
+        <a href="#process" class="hover:text-brand-400 transition">Process</a>
+        <a href="#results" class="hover:text-brand-400 transition">Results</a>
+        <a href="#pricing" class="hover:text-brand-400 transition">Pricing</a>
+        <a href="#contact" class="btn-primary px-4 py-2 rounded-lg text-white font-medium">Free Audit</a>
+      </div>
+      <button id="menu-toggle" class="md:hidden text-gray-400 hover:text-white">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-dark-900 border-t border-white/5 px-6 py-4 space-y-3">
+      <a href="#services" class="block text-gray-400 hover:text-white">Services</a>
+      <a href="#process" class="block text-gray-400 hover:text-white">Process</a>
+      <a href="#results" class="block text-gray-400 hover:text-white">Results</a>
+      <a href="#pricing" class="block text-gray-400 hover:text-white">Pricing</a>
+      <a href="#contact" class="block btn-primary text-center px-4 py-2 rounded-lg text-white font-medium">Free Audit</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="min-h-screen flex items-center justify-center px-6 pt-20">
+    <div class="max-w-4xl text-center fade-in">
+      <p class="text-brand-400 font-medium mb-4 tracking-wider uppercase text-sm">Twin Cities Web Design</p>
+      <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6">
+        We Build Websites That <span class="gradient-text">Actually Convert</span>
+      </h1>
+      <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-10">
+        Your website should be your hardest-working employee. We help small businesses in the Twin Cities get more customers, more calls, and more revenue through modern, fast, conversion-optimized web design.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#contact" class="btn-primary px-8 py-4 rounded-xl text-lg font-semibold text-white">Get Your Free Site Audit</a>
+        <a href="#results" class="px-8 py-4 rounded-xl text-lg font-semibold text-gray-400 border border-gray-700 hover:border-brand-400 hover:text-white transition">See Results</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16 fade-in">
+        <p class="text-brand-400 font-medium mb-2 tracking-wider uppercase text-sm">What We Do</p>
+        <h2 class="text-4xl font-bold">Services Built for Growth</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-dark-800 rounded-2xl p-8 border border-white/5 card-hover fade-in">
+          <div class="w-12 h-12 bg-brand-400/10 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Website Redesign</h3>
+          <p class="text-gray-400">Modern, mobile-first designs that load in under 2 seconds and turn visitors into paying customers. No templates -- custom built for your business.</p>
+        </div>
+        <div class="bg-dark-800 rounded-2xl p-8 border border-white/5 card-hover fade-in">
+          <div class="w-12 h-12 bg-brand-400/10 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">SEO Optimization</h3>
+          <p class="text-gray-400">Get found on Google when locals search for your services. Technical SEO, local optimization, Google Business, and content strategy that drives traffic.</p>
+        </div>
+        <div class="bg-dark-800 rounded-2xl p-8 border border-white/5 card-hover fade-in">
+          <div class="w-12 h-12 bg-brand-400/10 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Digital Strategy</h3>
+          <p class="text-gray-400">Analytics, conversion optimization, and an ongoing growth partnership. We don't just build and leave -- we help you grow month over month.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" class="py-24 px-6 bg-dark-950">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16 fade-in">
+        <p class="text-brand-400 font-medium mb-2 tracking-wider uppercase text-sm">How It Works</p>
+        <h2 class="text-4xl font-bold">Simple. Transparent. Effective.</h2>
+      </div>
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="text-center fade-in">
+          <div class="w-16 h-16 bg-brand-400/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl font-bold gradient-text">1</span>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Free Audit</h3>
+          <p class="text-gray-400 text-sm">We analyze your current site and show you exactly what is costing you customers -- with screenshots, data, and competitor comparisons.</p>
+        </div>
+        <div class="text-center fade-in">
+          <div class="w-16 h-16 bg-brand-400/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl font-bold gradient-text">2</span>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Custom Proposal</h3>
+          <p class="text-gray-400 text-sm">Detailed scope, realistic timeline, and transparent pricing tailored to your business. No surprises, no hidden fees.</p>
+        </div>
+        <div class="text-center fade-in">
+          <div class="w-16 h-16 bg-brand-400/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl font-bold gradient-text">3</span>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Build & Launch</h3>
+          <p class="text-gray-400 text-sm">We build, you review, we refine. Unlimited revisions until you love it. Then we launch and make sure everything is perfect.</p>
+        </div>
+        <div class="text-center fade-in">
+          <div class="w-16 h-16 bg-brand-400/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl font-bold gradient-text">4</span>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Grow Together</h3>
+          <p class="text-gray-400 text-sm">Ongoing support, monthly analytics reports, and continuous optimization to keep your site performing and growing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section id="results" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16 fade-in">
+        <p class="text-brand-400 font-medium mb-2 tracking-wider uppercase text-sm">Real Results</p>
+        <h2 class="text-4xl font-bold">What We Have Built</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-dark-800 rounded-2xl overflow-hidden border border-white/5 card-hover fade-in">
+          <div class="h-48 bg-gradient-to-br from-brand-600/20 to-blue-600/20 flex items-center justify-center">
+            <span class="text-6xl font-bold gradient-text">3x</span>
+          </div>
+          <div class="p-8">
+            <p class="text-brand-400 text-sm font-medium mb-1">HVAC Company</p>
+            <h3 class="text-lg font-bold mb-2">3x More Online Bookings</h3>
+            <p class="text-gray-400 text-sm">Outdated site was losing mobile customers. Full redesign with online booking system, Google Business optimization, and local SEO. Bookings tripled in 90 days.</p>
+          </div>
+        </div>
+        <div class="bg-dark-800 rounded-2xl overflow-hidden border border-white/5 card-hover fade-in">
+          <div class="h-48 bg-gradient-to-br from-brand-600/20 to-blue-600/20 flex items-center justify-center">
+            <span class="text-6xl font-bold gradient-text">+180%</span>
+          </div>
+          <div class="p-8">
+            <p class="text-brand-400 text-sm font-medium mb-1">Auto Body Shop</p>
+            <h3 class="text-lg font-bold mb-2">180% More Quote Requests</h3>
+            <p class="text-gray-400 text-sm">No online presence beyond a Facebook page. Built a professional site with before/after gallery, quote form, and review integration. Quote requests up 180%.</p>
+          </div>
+        </div>
+        <div class="bg-dark-800 rounded-2xl overflow-hidden border border-white/5 card-hover fade-in">
+          <div class="h-48 bg-gradient-to-br from-brand-600/20 to-blue-600/20 flex items-center justify-center">
+            <span class="text-6xl font-bold gradient-text">#1</span>
+          </div>
+          <div class="p-8">
+            <p class="text-brand-400 text-sm font-medium mb-1">Cleaning Service</p>
+            <h3 class="text-lg font-bold mb-2">Page 1 on Google in 60 Days</h3>
+            <p class="text-gray-400 text-sm">Invisible on Google despite great reviews. Technical SEO overhaul, local content strategy, and Google Business optimization. Now ranking #1 for key local searches.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="py-24 px-6 bg-dark-950">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16 fade-in">
+        <p class="text-brand-400 font-medium mb-2 tracking-wider uppercase text-sm">Investment</p>
+        <h2 class="text-4xl font-bold">Transparent Pricing, Real Value</h2>
+        <p class="text-gray-400 mt-4 max-w-2xl mx-auto">Every project is custom, but here is what to expect. All packages include mobile optimization, basic SEO, and 30 days of post-launch support.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-dark-800 rounded-2xl p-8 border border-white/5 card-hover fade-in">
+          <h3 class="text-lg font-bold mb-1">Starter</h3>
+          <p class="text-3xl font-bold gradient-text mb-2">$1,500 - $3,000</p>
+          <p class="text-gray-400 text-sm mb-6">Perfect for refreshing an existing site</p>
+          <ul class="space-y-3 text-sm text-gray-300">
+            <li class="flex items-start gap-2"><span class="text-brand-400 mt-0.5">&#10003;</span> Visual refresh and modernization</li>
+            <li class="flex items-start gap-2"><span class="text-brand-400 mt-0.5">&#10003;</span> Mobile responsive optimization</li>
+            <li class="flex items-start gap-2"><span class="text-brand-400 mt-0.5">&#10003;</span> Speed optimization</li>
+            <li class="flex items-start gap-2"><span class="text-brand-400 mt-0.5">&#10003;</span> Basic on-page SEO</li>
+            <li class="flex items-start gap-2"><span class="text-brand-400 mt-0.5">&#10003;</span> Contact form setup</li>
+            <li class="flex items-start gap-2"><span class="text-brand-400 mt-0.5">&#10003;</span> 30 days support</li>
+          </ul>
+          <a href="#contact" class="block mt-8 text-center py-3 rounded-xl border border-brand-400 text-brand-400 hover:bg-brand-400/10 transition font-medium">Get Started</a>
+        </div>
+        <div class="bg-dark-800 rounded-2xl p-8 border-2 border-brand-400 card-hover fade-in relative">
+          <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-400 text-dark-900 text-xs font-bold px-4 py-1 rounded-full">MOST POPULAR</span>
+          <h3 class="text-lg font-bold mb-1">Professional</h3>
+          <p class="text-3xl font-bold gradient-text mb-2">$3,000 - $7,000</p>
+          <p class="text-gray-400 text-sm mb-6">Complete redesign with results</p>
+          <ul class="space-y-3 text-sm text-gray-300">
+            <li class="flex items-start gap-2"><span class="text-brand-400 mt-0.5">&#10003;</span> Full custom design from scratch</li>
+            <li class="flex items-start gap-2"><span class="text-brand-400 mt-0.5">&#10003;</span> Copywriting and content strategy</li>
+            <li class="flex items-start gap-2"><span class="text-brand-400 mt-0.5">&#10003;</span> Advanced SEO package</li>
+            <li class="flex items-start gap-2"><span class="text-brand-400 mt-0.5">&#10003;</span> Google Business optimization</li>
+            <li class="flex items-start gap-2"><span class="text-brand-400 mt-0.5">&#10003;</span> Analytics and conversion tracking</li>
+            <li class="flex items-start gap-2"><span class="text-brand-400 mt-0.5">&#10003;</span> Custom features (booking, forms)</li>
+            <li class="flex items-start gap-2"><span class="text-brand-400 mt-0.5">&#10003;</span> 60 days support</li>
+          </ul>
+          <a href="#contact" class="block mt-8 text-center py-3 rounded-xl btn-primary text-white font-medium">Get Started</a>
+        </div>
+        <div class="bg-dark-800 rounded-2xl p-8 border border-white/5 card-hover fade-in">
+          <h3 class="text-lg font-bold mb-1">Enterprise</h3>
+          <p class="text-3xl font-bold gradient-text mb-2">$7,000 - $15,000</p>
+          <p class="text-gray-400 text-sm mb-6">Full digital transformation</p>
+          <ul class="space-y-3 text-sm text-gray-300">
+            <li class="flex items-start gap-2"><span class="text-brand-400 mt-0.5">&#10003;</span> Everything in Professional</li>
+            <li class="flex items-start gap-2"><span class="text-brand-400 mt-0.5">&#10003;</span> E-commerce integration</li>
+            <li class="flex items-start gap-2"><span class="text-brand-400 mt-0.5">&#10003;</span> Custom API integrations</li>
+            <li class="flex items-start gap-2"><span class="text-brand-400 mt-0.5">&#10003;</span> Content management system</li>
+            <li class="flex items-start gap-2"><span class="text-brand-400 mt-0.5">&#10003;</span> Ongoing content strategy</li>
+            <li class="flex items-start gap-2"><span class="text-brand-400 mt-0.5">&#10003;</span> Monthly performance reports</li>
+            <li class="flex items-start gap-2"><span class="text-brand-400 mt-0.5">&#10003;</span> 90 days priority support</li>
+          </ul>
+          <a href="#contact" class="block mt-8 text-center py-3 rounded-xl border border-brand-400 text-brand-400 hover:bg-brand-400/10 transition font-medium">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / CONTACT -->
+  <section id="contact" class="py-24 px-6">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Stop <span class="gradient-text">Losing Customers</span> to Your Website?</h2>
+      <p class="text-xl text-gray-400 mb-10">Get a free, no-obligation audit of your current site. We will show you exactly what is holding you back and what it would take to fix it.</p>
+      <div class="bg-dark-800 rounded-2xl p-8 border border-white/5">
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <input type="text" placeholder="Your Name" class="bg-dark-900 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:border-brand-400 focus:outline-none transition">
+          <input type="email" placeholder="Your Email" class="bg-dark-900 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:border-brand-400 focus:outline-none transition">
+        </div>
+        <input type="url" placeholder="Your Website URL" class="w-full bg-dark-900 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:border-brand-400 focus:outline-none transition mb-6">
+        <a href="mailto:gorillagrad9@gmail.com?subject=Free%20Site%20Audit%20Request" class="block w-full btn-primary py-4 rounded-xl text-lg font-semibold text-white text-center">Send My Free Audit Request</a>
+        <p class="text-gray-500 text-sm mt-4">Or email directly: <a href="mailto:gorillagrad9@gmail.com" class="text-brand-400 hover:underline">gorillagrad9@gmail.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-12 px-6 border-t border-white/5">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="text-center md:text-left">
+        <p class="font-bold gradient-text text-lg">CG Web Design</p>
+        <p class="text-gray-500 text-sm">Twin Cities, MN</p>
+      </div>
+      <div class="flex gap-6 text-sm text-gray-500">
+        <a href="#services" class="hover:text-white transition">Services</a>
+        <a href="#pricing" class="hover:text-white transition">Pricing</a>
+        <a href="#contact" class="hover:text-white transition">Contact</a>
+      </div>
+      <p class="text-gray-600 text-sm">2026 Charles G Web Design. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Mobile menu
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => document.getElementById('mobile-menu').classList.add('hidden'));
+    });
+    // Scroll fade-in
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>
