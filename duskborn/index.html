@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DUSKBORN — The Third Dusk</title>
+<link rel="stylesheet" href="dusk.css">
+
+</head>
+<body>
+<main class="page">
+  <header class="mast">
+    <h1 class="brand">DUSKBORN<small>THE THIRD DUSK</small></h1>
+    <div>
+      <div class="dusk-mark" aria-label="Dusk clock"><i class="sun"></i><i class="sun"></i><i class="sun"></i></div>
+      <div id="connection" class="status">Storyteller: offline</div>
+    </div>
+  </header>
+  <div class="layout">
+    <section class="game creating" id="game">
+      <div class="screen">
+        <canvas id="world" width="640" height="360" aria-label="Duskmere village map"></canvas>
+        <div id="mapPrompt" class="map-prompt hidden" aria-live="polite"></div>
+        <div class="cover" id="cover">
+          <div class="cover-card">
+            <div class="eyebrow">A dark-fantasy role-playing slice</div>
+            <h2>Three dusks.<br>One village.</h2>
+            <p>The dead wait at the crypt gate. They want an heir, an elder, or ashes. Who you become is never shown as a number—but Duskmere will remember.</p>
+            <div class="creator">
+              <input id="name" maxlength="18" autocomplete="off" aria-label="Character name" placeholder="Name your survivor">
+              <button class="class selected" data-class="warrior"><strong>Warrior</strong><span>Might 3 · Finesse 1 · Wits 1 · Charm 2</span></button>
+              <button class="class" data-class="rogue"><strong>Rogue</strong><span>Might 1 · Finesse 3 · Wits 2 · Charm 1</span></button>
+              <button class="class" data-class="mage"><strong>Mage</strong><span>Might 1 · Finesse 1 · Wits 3 · Charm 2</span></button>
+              <button class="class" data-class="trickster"><strong>Trickster</strong><span>Might 1 · Finesse 2 · Wits 2 · Charm 3</span></button>
+            </div>
+            <p class="legend"><b>Move</b> WASD / arrows · <b>Talk</b> E, Enter, or Interact beside a person or door · <b>Type</b> T then any action · a risky act shows a real d20 before the world answers.</p>
+            <div class="cover-go"><button id="begin">Enter Duskmere</button><button id="continue" class="hidden">Continue saved life</button></div>
+          </div>
+        </div>
+        <div class="cinema hidden" id="cinema"><div class="cinema-card"><div class="eyebrow">A defining moment</div><h3 id="cinemaTitle"></h3><p id="cinemaText"></p><button id="cinemaClose">Carry it with you</button></div></div>
+        <div class="die hidden" id="die" role="dialog" aria-label="Dice roll"><div class="die-box"><div class="die-cap" id="dieCap">THE DIE IS CAST</div><div class="die-face" id="dieFace">20</div><div class="die-adv hidden" id="dieAdv"></div><p id="dieText" aria-live="polite">The die is still moving.</p><span class="die-hint" id="dieHint"></span></div></div>
+        <div class="ending hidden" id="ending"><div><div class="eyebrow">Your name enters the village book</div><h2 id="endingTitle"></h2><p id="endingText"></p><button id="again">Begin another life</button></div></div>
+        <div id="toast" class="toast hidden"></div>
+      </div>
+      <div class="story">
+        <div class="story-head"><h2 id="sceneTitle">Duskmere waits</h2><span class="world-note" id="worldNote"></span></div>
+        <p id="narration">Name your survivor. The village will do the rest.</p>
+        <div class="choices" id="choices"></div>
+        <form class="action" id="actionForm">
+          <label for="actionInput">What do you do?</label>
+          <button type="button" id="interactBtn" disabled>Interact</button>
+          <input id="actionInput" maxlength="180" autocomplete="off" placeholder="Type an action… (press T)" disabled>
+          <button id="act" disabled>Do it</button>
+        </form>
+      </div>
+    </section>
+    <aside aria-label="Character and quest status">
+      <div class="sigil" aria-hidden="true"></div>
+      <div class="rail-title">The survivor</div>
+      <div class="vital"><span id="hero">Unwritten</span><b id="className">—</b></div>
+      <div class="vital"><span>Life</span><b id="hp">♥♥♥♥♥</b></div>
+      <div class="vital"><span>Coin</span><b id="gold">0</b></div>
+      <div class="vital"><span>Burden</span><b id="burden">none</b></div>
+      <div class="rail-title">The third dusk</div>
+      <div class="objective" id="objective">Kaethas waits at the crypt gate. Find strength, find truth, kneel—or run.</div>
+      <div class="rail-title">What the village shows you</div>
+      <ul class="omens" id="omens"><li>No one knows your name yet.</li></ul>
+      <div class="rail-actions"><button id="save">Save this life</button><button id="reset" class="danger">Erase save</button></div>
+      <div class="hints"><b>Move:</b> WASD / arrows<br><b>Talk / enter:</b> E, Enter, or Interact beside a person or door<br><b>Type:</b> T to focus · Escape backs out · progress saves automatically</div>
+    </aside>
+  </div>
+</main>
+<script>
+(async () => {
+  const files = ['dusk-1.js', 'dusk-2.js', 'dusk-3.js', 'dusk-4.js'];
+  const parts = [];
+  for (const f of files) {
+    const r = await fetch(f, {cache: 'no-store'});
+    if (!r.ok) throw new Error('Failed to load ' + f);
+    parts.push(await r.text());
+  }
+  const s = document.createElement('script');
+  s.textContent = parts.join('');
+  document.documentElement.appendChild(s);
+})().catch(err => {
+  document.body.insertAdjacentHTML('afterbegin', '<pre style="color:#eadcb7;padding:24px">Could not load DUSKBORN: '+String(err)+'</pre>');
+});
+</script>
+
+</body>
+</html>
